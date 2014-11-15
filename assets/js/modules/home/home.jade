@@ -1,0 +1,15 @@
+div.container-fluid
+
+  div.container-fluid
+    a.btn.btn-default.btn-block(href ui-sref="post") new post
+
+  div.container-fluid
+    img.img-thumbnail(src="", alt="")
+
+  div.container-fluid(ng-repeat="post in app.posts")
+
+    blockquote
+
+      p {{post.text}}
+
+      footer {{post.user}} gave {{post.amount}}

@@ -1,0 +1,54 @@
+doctype html
+html
+  head
+    title= title
+
+    // Viewport mobile tag for sensible mobile support
+    meta(name="viewport",content="width=device-width, initial-scale=1, maximum-scale=1")
+
+    link(href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic', rel='stylesheet', type='text/css')
+
+    link(href="/styles/bootstrap.min.css", rel="stylesheet" )
+    link(href="/styles/style.css", rel="stylesheet")
+
+    //angular orm dependencies
+    script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js")
+    script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.js")
+    script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.js")
+    script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-sanitize.js")
+    script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-cookies.js")
+    script(src="/js/lib/Angular/angular-ui-router.min.js")
+    script(src="/js/lib/Angular/ui-bootstrap-tpls-0.11.0.min.js")
+    script(src="/js/lib/Underscore/underscore.js")
+
+    script(src="/js/lib/Angular/jquery.js")
+
+    //firebase
+    script(src="https://cdn.firebase.com/js/client/1.0.21/firebase.js")
+    script(src="https://cdn.firebase.com/libs/angularfire/0.8.2/angularfire.min.js")
+
+    block styles
+
+  body(ng-app="totem")
+
+    block body
+
+    // The linker searches for this tag and adds js.  If there's no linker, we point to sails.io.js
+    // SCRIPTS
+    script(src="/js/dependencies/sails.io.js")
+    script(src="/js/lib/Angular/angular-ui-router.min.js")
+    script(src="/js/lib/Angular/jquery.js")
+    script(src="/js/lib/Angular/ui-bootstrap-tpls-0.11.0.min.js")
+    script(src="/js/lib/Bacon/Bacon.min.js")
+    script(src="/js/lib/Parse/parse.js")
+    script(src="/js/lib/Skrollr/skrollr-directive.js")
+    script(src="/js/lib/Skrollr/skrollr.min.js")
+    script(src="/js/lib/Skrollr/skrollr.stylesheets.min.js")
+    script(src="/js/lib/Underscore/underscore.js")
+    script(src="/js/modules/Object.js")
+    script(src="/js/modules/app.js")
+    script(src="/js/modules/home/home.js")
+    script(src="/js/modules/post/post.js")
+    script(src="/js/modules/post/postscript.js")
+    // SCRIPTS END
+

@@ -1,0 +1,24 @@
+script(src="/js/modules/post/postscript")
+
+div.container-fluid
+
+  div.form-group
+
+    label(for="text") message
+
+    input.form-control#text(type="text", ng-model="app.text")
+
+  input.btn.btn-defaul#take-picture(type="file", accept="image/*", capture, ng-model="imageFile", onchange="angular.element(this).scope().setFile()")
+
+  div
+
+    div.btn-group#buttonbar(role="group")
+      button.btn.btn-default(type="button", ng-click="app.amount = '$1'") $1
+      button.btn.btn-default(type="button", ng-click="app.amount = '$5'") $5
+      button.btn.btn-default(type="button", ng-click="app.amount = '$10'") $10
+
+    div.btn-group(role="group")
+      button.btn.btn-default(type="button", ng-click="app.amount = '$0'") Tag Friends
+
+  button.btn.btn-default.btn-block(ng-click="app.post()") POST
+

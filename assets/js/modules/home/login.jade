@@ -1,0 +1,11 @@
+div.center-block
+
+  form(role="form")
+
+    div.form-group
+
+      label(for="inputUsername") username
+      input.form-control#inputUsername(type="text", ng-model="username")
+
+  a.btn.btn-default#signin(ng-click="app.login(username)") sign in
+

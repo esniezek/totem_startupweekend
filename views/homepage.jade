@@ -1,0 +1,18 @@
+extends layout
+
+
+block body
+
+  div.col-md-1
+
+    h1
+      a(href ui-sref="home") totem
+
+    h1
+      small  build your's
+
+    div(ui-view="login")
+
+    div(ui-view="main")
+
+    div(ui-view="post")
