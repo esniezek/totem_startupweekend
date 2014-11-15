@@ -4,6 +4,12 @@ div.container-fluid
 
   div.form-group
 
+    label(for="text") username
+
+    input.form-control#user(type="text", ng-model="app.user.username")
+
+  div.form-group
+
     label(for="text") message
 
     input.form-control#text(type="text", ng-model="app.text")

@@ -11,10 +11,10 @@ module.factory 'AppObject', ($state, $firebase) ->
       @sync = $firebase(@root)
 
       @usersSync = $firebase(@root.child("users"))
-      @users = @usersSync.$asArray()
+      @users = @usersSync.$asObject()
 
       @postsSync = $firebase(@root.child("posts"))
-      @posts = @postsSync.$asArray()
+      @posts = @postsSync.$asObject()
 
       @user = {}
 
@@ -55,6 +55,13 @@ module.factory 'AppObject', ($state, $firebase) ->
 
     post: ()->
 
+      console.log Parse
+
+      if not @user.username
+
+        alert("please signin")
+
+        $state.go('/')
 
       newPost = {
 
@@ -67,7 +74,7 @@ module.factory 'AppObject', ($state, $firebase) ->
 
       ## save post to firebase
 
-      @posts.$add(newPost).then (result)->
+      @posts.$push(newPost).then (result)->
 
         console.log "new post saved in firebase: #{result}"
 

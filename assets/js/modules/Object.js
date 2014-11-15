@@ -11,9 +11,9 @@
         this.root = new Firebase("https://resplendent-fire-8698.firebaseio.com/");
         this.sync = $firebase(this.root);
         this.usersSync = $firebase(this.root.child("users"));
-        this.users = this.usersSync.$asArray();
+        this.users = this.usersSync.$asObject();
         this.postsSync = $firebase(this.root.child("posts"));
-        this.posts = this.postsSync.$asArray();
+        this.posts = this.postsSync.$asObject();
         this.user = {};
         this.loggedIn = false;
         this.amount = '';
@@ -41,12 +41,17 @@
 
       AppObject.prototype.post = function() {
         var newPost;
+        console.log(Parse);
+        if (!this.user.username) {
+          alert("please signin");
+          $state.go('/');
+        }
         newPost = {
           user: this.user.username,
           text: this.text,
           amount: this.amount
         };
-        return this.posts.$add(newPost).then(function(result) {
+        return this.posts.$push(newPost).then(function(result) {
           var PostObject, post;
           console.log("new post saved in firebase: " + result);
           console.log("image file: " + this.imageFile.name);
